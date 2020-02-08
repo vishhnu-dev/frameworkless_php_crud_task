@@ -1,0 +1,45 @@
+
+.header .container{
+    padding: none !important;
+}   
+.dashboard{
+    margin-top: 20px;
+    padding: none !important;
+}
+.dashboard .title{
+    border-bottom: solid #ededed 2px;
+    height: 100px;
+    padding: 0px 0px !important;
+}
+.dashboard a{
+    text-decoration: none;
+    color: #212529;
+}
+
+.options{
+    height: 250px;
+    margin-top: 20px;
+    border-bottom: solid #ededed 2px;
+}
+.options .btn-config{
+    height: 200px;
+    width: 200px;
+}
+.options .btn-config i{
+    font-size: 85px;
+}
+
+#insert, #select{
+    margin-top: -2px;
+}
+
+.ctn-form{
+    display: flex;
+    justify-content: center;
+}
+.ctn-form form{
+    width: 320px;
+}
+.ctn-form button{
+    width: 100%;
+}
