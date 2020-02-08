@@ -24,8 +24,8 @@
                 echo "<td>" . $row['name'] . "</td>";
                 echo "<td>" . $row['age'] . "</td>";
                 echo "<td>";
-                echo "<a href='delete.php?id=" . $row['id'] . "' class='btn btn-primary'>Deletar usuário</a>";
-                echo "<a href='update.php?id=" . $row['id'] . "' class='btn btn-info'>Update</a>";
+                echo "<a href='view/partials/delete.php?id=" . $row['id'] . "' class='btn btn-primary'>Deletar usuário</a>";
+                echo "<a href='view/partials/update.php?id=" . $row['id'] . "' class='btn btn-info'>Update</a>";
                 echo "</td>";
                 echo "</tr>";
             }
