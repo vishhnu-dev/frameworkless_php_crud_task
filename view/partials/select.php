@@ -1,5 +1,7 @@
 <?php
+    #bring the database configuration
     require_once "config/config.php";
+    #Simple select
     $sql = "SELECT * FROM users";
     $query_res = $connection->query($sql);
 ?>
@@ -22,9 +24,8 @@
                 echo "<td>" . $row['name'] . "</td>";
                 echo "<td>" . $row['age'] . "</td>";
                 echo "<td>";
-                echo "<a href='read.php?id=" . $row['id'] . "' class='btn btn-primary'>Read</a>";
+                echo "<a href='delete.php?id=" . $row['id'] . "' class='btn btn-primary'>Deletar usuário</a>";
                 echo "<a href='update.php?id=" . $row['id'] . "' class='btn btn-info'>Update</a>";
-                echo "<a href='delete.php?id=" . $row['id'] . "' class='btn btn-danger'>Delete</a>";
                 echo "</td>";
                 echo "</tr>";
             }
@@ -33,6 +34,5 @@
             } else {
                 echo "<p class='lead'><em>No records were found.</em></p>";
             }
-            $connection->close();
     ?>
 </div>
