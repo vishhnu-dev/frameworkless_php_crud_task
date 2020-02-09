@@ -1,7 +1,9 @@
-
-.header .container{
-    padding: none !important;
-}   
+/* layouts/header */
+    .header .container{
+        padding: none !important;
+    } 
+/* end layouts/header */
+  
 .dashboard{
     margin-top: 20px;
     padding: none !important;
@@ -43,3 +45,7 @@
 .ctn-form button{
     width: 100%;
 }
+
+/* partial/update */
+
+/* end partial/update */

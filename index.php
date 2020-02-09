@@ -63,7 +63,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
     <!-- end dashboard section -->

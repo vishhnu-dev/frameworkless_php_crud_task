@@ -1,10 +1,10 @@
 <?php
-    #bring the database configurations
-    require_once "config/config.php";
-
     #Checks if the method is post
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+        #bring the database configurations
+        require_once "config/config.php";
+        
         #Checks if the coming from form information is set
         if (isset($_POST['name']) && isset($_POST['age'])) {
 
@@ -15,22 +15,28 @@
                 $stmt->bind_param("ssi", $_POST['id'], $_POST['name'], $_POST['age']);
                 if ($stmt->execute()) {
                     echo "Sucess! User was registered.";
-                    header("location: index.php");
+                    #header("location: index.php");
+                    echo"
+                        <script>
+                            window.location = 'index.php';
+                        </script>
+                    ";
                     exit();
                 } else {
                     #404
-                    header("location: view/pages/404.html");
+                    #header("location: view/pages/404.html");
                 }
                 $stmt->close();
             }else{
                 #404
-                header("location: view/pages/404.html");
+                #header("location: view/pages/404.html");
             }
         }
     }
 ?>
 <div class="ctn-form">
     <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST">
+        <label class="tittle-form">Cadastrar</label>
         <!--hidden id-->
         <input type="hidden" name="id">
 
