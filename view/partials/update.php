@@ -20,15 +20,14 @@
                     $param_age = $row["age"];
 
                 } else {
-                    echo "Error! Data Not Found";
+                    header("Location: http://localhost/teste-de-conhecimento/view/pages/404.html");
                     exit();
                 }
             } else {
-                echo "Error! Please try again later.";
+                header("Location: http://localhost/teste-de-conhecimento/view/pages/404.html");
                 exit();
             }
             $stmt->close();
-
         }
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,25 +42,18 @@
                 $stmt->execute();
 
                 if ($stmt->error) {
-                    echo "Error!" . $stmt->error;
+                    header("Location: http://localhost/teste-de-conhecimento/view/pages/404.html");
                     exit();
                 } else {
-                    echo "
-                        <script>
-                            window.location.href = 'http://localhost/teste-de-conhecimento/';
-                        </script>
-                    ";
+                    header("Location: http://localhost/teste-de-conhecimento/");
                 }
                 $stmt->close();
             }
         }
         $connection->close();
-        
     }
 ?>
-
 <!-- | -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -89,38 +81,44 @@
 
         <!-- dashboard section -->
             <section class="dashboard">
-            <div class="container">
+                <div class="container">
                 <div class="title">
-                <a href="#">
-                    <h1>Dashboard</h1>
-                </a>
+                    <a href="index.php">
+                    <h1>Dashboard <i class="fab fa-battle-net"></i> </h1>
+                    </a>
                 </div>
-            </div>
-        <!-- scripts -->
+                </div>
+            </section>
+        <!-- end dashboard section -->
 
         <div class="ctn-form">
-            <form action="update.php" method="POST">
+            <form id="form" name="form" action="update.php" method="POST" onSubmit="return check_field();">
 
-                <label class="tittle-form">Alterar o cadastro do usuário</label>
+                <h5 class="title-form align-center">Cadastrar usuário</h5>
 
                 <!--hidden id-->
                     <input type="hidden" name="id" value="<?php if(isset($param_id)){echo $param_id;} ?>">
 
                 <div class="form-group">
-                    <input class="form-control" name="name" placeholder="Enter your name" value="<?php if(isset($param_name)){ echo $param_name; }  ?>">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" name="age"  placeholder="Enter your age" value="<?php if(isset($param_age)){ echo $param_age; } ?>">
+                    <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name" value="<?php if(isset($param_name)){ echo $param_name; } ?>">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <input class="form-control" id="age"  name="age"  type="text" placeholder="Enter your age" value="<?php if(isset($param_age)){ echo $param_age; } ?>">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
 
         <!-- scripts -->
-            <script>
-                src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+            <script src="assets/main.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.29.2/sweetalert2.all.js"></script>
+            <script src="https://kit.fontawesome.com/1a0c089da4.js" crossorigin="anonymous"></script>
+
+            <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
                 crossorigin="anonymous">
             </script>
 
@@ -129,12 +127,12 @@
                 integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
                 crossorigin="anonymous">
             </script>
-
+            
             <script 
                 src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
                 crossorigin="anonymous">
-                </script>
-        <!-- end scripts -->
+            </script>
+        <!-- end of scripts -->
     </body>
 </html>

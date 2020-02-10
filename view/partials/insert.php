@@ -14,42 +14,37 @@
             if ($stmt = $connection->prepare($sql)) {
                 $stmt->bind_param("ssi", $_POST['id'], $_POST['name'], $_POST['age']);
                 if ($stmt->execute()) {
-
-                    echo "Sucess! User was registered.";
-                    header("location: index.php");
-                    exit();
-
+                    
+                    @header("Location: http://localhost/teste-de-conhecimento/");
                 } else {
                     #404
-                    header("location: view/pages/404.html");
+                    @header("Location: http://localhost/teste-de-conhecimento/view/pages/404.html");
                 }
                 $stmt->close();
+
             }else{
                 #404
-                header("location: view/pages/404.html");
+                @header("Location: http://localhost/teste-de-conhecimento/view/pages/404.html");
             }
         }
     }
 ?>
-
 <!-- | -->
-
 <div class="ctn-form">
-    <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST">
-        <label class="tittle-form">Cadastrar</label>
+    <form id="form" name="form" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST" onSubmit="return check_field();">
+
+        <h5 class="title-form align-center">Cadastrar usuário</h5>
+
         <!--hidden id-->
             <input type="hidden" name="id">
 
         <div class="form-group">
-            <input class="form-control" name="name" placeholder="Enter your name">
+            <input id="name" type="text" class="form-control" name="name" placeholder="Enter your name *">
         </div>
         <div class="form-group">
-            <input class="form-control" name="age"  placeholder="Enter your age">
+            <input id="age"  type="text" class="form-control" name="age"  placeholder="Enter your age *">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="btn" type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>
-
-
-
