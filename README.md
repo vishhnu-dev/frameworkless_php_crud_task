@@ -25,7 +25,11 @@ Abra seu navegador e digite localhost/phpmyadmin/ -> procure por "Novo" no canto
 Crie em "novo" um novo banco de dados chamado "app" !important
 
 # 4° Clone do projeto
-Faça o clone do projeto
+Faça o clone do projeto->extrai-o-> e renomei a pasta principal para "Teste-de-conhecimento" até que a estrutura siga desse jeito !:
+Teste-de-conhecimento {
+  arquivos e pastas
+  index.php -> inicia o sistema
+}
 
 # 5° Inserindo o projeto local
 Copie a pasta "Teste-de-conhecimento" do projeto em dowloads e copie neste directório C:\xampp\htdocs.
