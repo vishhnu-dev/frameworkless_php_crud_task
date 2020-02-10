@@ -43,3 +43,5 @@ No phpmyadmin clique no banco de dados criado "app" e selecione a opção import
 
 * O login do mysql utilizado no sistema para conexão é  User : root  Password : '' -> sem senha, a primeira instalação do xampp segue esse padrão, então não se preocupe!
 
+# System Future implementations
+### Ajax for learning and fast messages with redirects 
