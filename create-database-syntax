@@ -1,6 +1,7 @@
 CREATE DATABASE app;
 
-# Passo 7 !important
+# Passo 7 :: Copie e cole o código abaixo para cria a tabela de usuários.
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
