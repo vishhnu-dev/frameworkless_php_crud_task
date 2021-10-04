@@ -44,3 +44,5 @@ O código para criar o banco e a tabela de usuário está disponivel no arquivo 
 
 # System Future implementations
 ### Ajax for learning and fast messages with redirects
+
+# Result: Job conquered
